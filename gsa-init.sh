@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BASEDIR=${1:-/serverfiles}
+EVENTS_FILE=/tmp/events.csv
 PREFIX="\[HoMe\]"
 GSA_CONTROL="${BASEDIR}/gsa-control.sh"
 GUS="${BASEDIR}/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini"
@@ -10,6 +11,9 @@ if [ ! -f $GSA_CONTROL ]; then
   echo "GSA_CONTROL file not found";
   exit 1;
 fi
+
+echo "Fetching the list of events"
+curl -s -o /tmp/events.csv -f https://raw.githubusercontent.com/meza/HoMe-Ark-Cluster-Management/main/events.csv
 
 # Set active event
 
@@ -28,13 +32,19 @@ get_active_event() {
       echo "$event_name"
       break
     fi
-  done < ./events.csv
+  done < $EVENTS_FILE
   echo ""
 }
 
 ACTIVE_EVENT="$(get_active_event)"
 
-echo "Active event: $ACTIVE_EVENT"
+if [ -n "$ACTIVE_EVENT" ]; then
+  echo "Active event: $ACTIVE_EVENT"
+else
+  echo "No active event"
+fi
+
+## Clear the flag
 sed -i "s/%%EVENT%%/-ActiveEvent=$ACTIVE_EVENT/g" $GSA_CONTROL
 
 # Override Settings
