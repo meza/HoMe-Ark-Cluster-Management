@@ -49,19 +49,15 @@ sed -i "s/%%EVENT%%/-ActiveEvent=$ACTIVE_EVENT/g" $GSA_CONTROL
 
 # Override Settings
 
+## Aberration
 if grep -q "$PREFIX Aberration" $GSA_CONTROL; then
-  echo "Overriding the DayTimeScale"
+  echo "Overriding the DayTimeScale to be default"
   sed -i "s/DayTimeSpeedScale=.5/DayTimeSpeedScale=1/g" $GUS
 fi
 
-
-NO_TRANSFER_PREFIX="No Item"
-NO_TRANSFER_POSTFIX="Dino Transfer"
-NO_TRANSFER="${NO_TRANSFER_PREFIX} / ${NO_TRANSFER_POSTFIX}"
-
-if grep -q "$NO_TRANSFER" $GSA_CONTROL; then
+## Overrides Non-Story maps
+if grep -q "No Item / Dino Transfer" $GSA_CONTROL; then
   echo "Overriding Transfer Prevention"
-  sed -i "s/PreventUploadSurvivors=False/PreventUploadSurvivors=True/g" $GUS
   sed -i "s/PreventUploadItems=False/PreventUploadItems=True/g" $GUS
   sed -i "s/PreventUploadDinos=False/PreventUploadDinos=True/g" $GUS
   sed -i "s/PreventDownloadItems=False/PreventDownloadItems=True/g" $GUS
