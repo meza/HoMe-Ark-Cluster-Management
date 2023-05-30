@@ -1,0 +1,18 @@
+{
+  "title": "%%EVENT_NAME%% is now active!",
+  "description": "%%EVENT_NAME%% is now active on all servers!",
+  "fields": [
+    {
+      "name": "Activities",
+      "value": "- Find event coloured dinos\n- Unlock new skins\n- Unlock new chibis\n- Unlock new emotes \n- and more!"
+    },
+    {
+      "name": "Share the fun!",
+      "value": "Don't forget to share screenshots of the things you find"
+    }
+  ],
+  "thumbnail": {
+    "url": "https://ark.wiki.gg/images/d/d0/ARK_Event.png"
+  },
+  "color": "#e4f500"
+}

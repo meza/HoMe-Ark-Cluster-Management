@@ -1,0 +1,26 @@
+{
+  "title": "Summer Bash is now active!",
+  "url": "https://survivetheark.com/index.php?/articles.html/community-crunch-273-summer-bash-evo-event-and-more-r1781/",
+  "description": "Summer can officially begin with the start of the upcoming Summer Bash event! Get ready to soak in some sun and have some fun with a community-favorite ARK event.  From June 30th to July 14th the annual Summer Bash event will be underway.  Relax by the beach with your tribemates or go on the hunt for newly released chibi pets! However you choose to spend your summer in ARK, Summer Bash is bound to cook up a lot of entertainment.",
+  "fields": [
+    {
+      "name": "Activities",
+      "value": "- Find event coloured dinos\n- Unlock new skins\n- Unlock new chibis\n- Unlock new emotes \n- and more!"
+    },
+    {
+      "name": "Find out more",
+      "value": "Ark's announcement post: <https://survivetheark.com/index.php?/articles.html/community-crunch-273-summer-bash-evo-event-and-more-r1781/>"
+    },
+    {
+      "name": "Share the fun!",
+      "value": "Don't forget to share screenshots of the things you find"
+    }
+  ],
+  "image": {
+    "url": "https://blog.turtlebeach.com/wp-content/uploads/2022/05/ARK-Summer-Bash.jpeg"
+  },
+  "thumbnail": {
+    "url": "https://ark.wiki.gg/images/d/d0/ARK_Event.png"
+  },
+  "color": "#e4f500"
+}
