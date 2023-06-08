@@ -110,10 +110,14 @@ if grep -q "$PREFIX Aberration" "$GSA_CONTROL"; then
 fi
 
 ## Svartalfheim
-if grep -q "Svartalfheim" "$GSA_CONTROL"; then
+if grep -q "No Transfer" "$GSA_CONTROL"; then
   echo "Overriding Transfer Prevention for Svartalfheim"
   sed -i "s/PreventDownloadSurvivors=False/PreventDownloadSurvivors=True/g" $GUS
   sed -i "s/PreventUploadSurvivors=False/PreventUploadSurvivors=True/g" $GUS
+  sed -i "s/PreventUploadItems=False/PreventUploadItems=True/g" $GUS
+  sed -i "s/PreventUploadDinos=False/PreventUploadDinos=True/g" $GUS
+  sed -i "s/PreventDownloadItems=False/PreventDownloadItems=True/g" $GUS
+  sed -i "s/PreventDownloadDinos=False/PreventDownloadDinos=True/g" $GUS
 fi
 
 ## Overrides Non-Story maps
