@@ -109,6 +109,13 @@ if grep -q "$PREFIX Aberration" "$GSA_CONTROL"; then
   sed -i "s/DayTimeSpeedScale=.5/DayTimeSpeedScale=1/g" $GUS
 fi
 
+## Svartalfheim
+if grep -q "Svartalfheim" "$GSA_CONTROL"; then
+  echo "Overriding Transfer Prevention for Svartalfheim"
+  sed -i "s/PreventDownloadSurvivors=False/PreventDownloadSurvivors=True/g" $GUS
+  sed -i "s/PreventUploadSurvivors=False/PreventUploadSurvivors=True/g" $GUS
+fi
+
 ## Overrides Non-Story maps
 if grep -q "No Item / Dino Transfer" "$GSA_CONTROL"; then
   echo "Overriding Transfer Prevention"
